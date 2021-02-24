@@ -1,0 +1,25 @@
+version: '3.7'
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/app
+      - .docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - app
+
+  app:
+    build: .
+    depends_on:
+      - meili
+    volumes:
+      - ./:/app
+
+  meili:
+    image: getmeili/meilisearch
+    ports:
+    - "7700:7700"
+    volumes:
+    - ./meili/data.ms:/data.ms

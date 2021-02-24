@@ -1,0 +1,8 @@
+{
+    "name": "alexanderglueck/meilisearch-test",
+    "require": {
+        "meilisearch/meilisearch-php": "^0.16.0",
+        "guzzlehttp/guzzle": "^7.2",
+        "http-interop/http-factory-guzzle": "1.0"
+    }
+}
